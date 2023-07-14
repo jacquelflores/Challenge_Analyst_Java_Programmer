@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}"></title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}"/>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table th {
+            background-color: #000000;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .table td {
+            vertical-align: middle;
+        }
+
+        .coat-of-arms-image {
+            max-width: 150px;
+            max-height: 150px;
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form action="/" class="card bg-light">
+        <div class="card-header" th:text="${titulo}"></div>
+        <div class="card-body">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>Name Oficial</th>
+                    <th>Region</th>
+                    <th>SubRegion</th>
+                    <th>Languages</th>
+                    <th>Currencies</th>
+                    <th>Coat Of Arms</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td th:text="${nombreOficial}"></td>
+                    <td th:text="${region}"></td>
+                    <td th:text="${subregion}"></td>
+                    <td th:text="${languages}"></td>
+                    <td th:text="${currencies}"></td>
+                    <td>
+                        <a href="#"><img th:src="${coatOfArms}" class="coat-of-arms-image"></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <button type="submit" class="btn btn-primary">Regresar</button>
+    </form>
+</div>
+
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-ui.min.js}"></script>
+</body>
+</html>
